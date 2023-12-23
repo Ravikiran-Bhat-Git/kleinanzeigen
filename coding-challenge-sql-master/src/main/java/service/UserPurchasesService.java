@@ -7,6 +7,7 @@ import interfaces.SaveUserProducts;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import repository.UserPurchaseRepository;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class UserPurchasesService implements SaveUserProducts {
     private final UserService userService;
 
     @Override
+    @Transactional
     public List<UserPurchases> saveProducts() {
         List<Purchases> purchasesList = purchasesService.getPurchasesFromFile();
         List<Users> usersList = userService.getUsersFromFile();
