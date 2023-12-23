@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    default:
+      url: jdbc:mysql://localhost:3306/coding_challenge
+      username: root
+      password: root
