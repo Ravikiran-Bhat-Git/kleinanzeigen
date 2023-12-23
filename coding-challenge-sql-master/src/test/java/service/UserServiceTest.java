@@ -1,6 +1,6 @@
 package service;
 
-import dto.Purchases;
+import dto.Users;
 import exercise.CodingChallengeSQL;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -14,18 +14,18 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = CodingChallengeSQL.class)
 @EnableAutoConfiguration(
         exclude = {DataSourceAutoConfiguration.class}
 )
-class PurchasesServiceTest {
+class UserServiceTest {
     @Autowired
-    private PurchasesService purchasesService;
+    private UserService userService;
+
     @Test
-    void shouldGetPurchasesFromFile() {
-        List<Purchases> purchases = purchasesService.getPurchasesFromFile();
-        assertFalse(purchases.isEmpty());
+    void shouldGetUsersFromFile() {
+        List<Users> users = userService.getUsersFromFile();
+        assertFalse(users.isEmpty());
     }
 }
